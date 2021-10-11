@@ -28,7 +28,7 @@ This is a [Node.js](https://nodejs.org/en/) module available through the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
-$ npm @onefloms/install mime-types
+$ npm install @onefloms/mime-types
 ```
 
 ## Adding Types
