@@ -1,5 +1,6 @@
 /*!
  * mime-types
+ * Copyright(c) 2021 Yoel Nunez
  * Copyright(c) 2014 Jonathan Ong
  * Copyright(c) 2015 Douglas Christopher Wilson
  * MIT Licensed
@@ -13,7 +14,7 @@
  */
 
 var db = require('mime-db')
-var extname = require('path').extname
+var extname = require('./extension');
 
 /**
  * Module variables.

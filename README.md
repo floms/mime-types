@@ -1,10 +1,12 @@
-# mime-types
+# @onefloms/mime-types
 
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
 [![Node.js Version][node-version-image]][node-version-url]
 [![Build Status][ci-image]][ci-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
+
+> This package is a clone of [jshttp/mime-types](https://github.com/jshttp/mime-types) with the added compatibility for any JS environment including web. Also supports TypeScript out-of-the-box (no need to install `@types/mime-types` anymore) 
 
 The ultimate javascript content-type utility.
 
@@ -26,7 +28,7 @@ This is a [Node.js](https://nodejs.org/en/) module available through the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
-$ npm install mime-types
+$ npm @onefloms/install mime-types
 ```
 
 ## Adding Types
@@ -37,64 +39,66 @@ so open a PR there if you'd like to add mime types.
 ## API
 
 ```js
-var mime = require('mime-types')
+var { lookup, contentType} = require('@onefloms/mime-types');
+// or
+import { lookup, contentType } from '@onefloms/mime-types';
 ```
 
 All functions return `false` if input is invalid or not found.
 
-### mime.lookup(path)
+### lookup(path)
 
 Lookup the content-type associated with a file.
 
 ```js
-mime.lookup('json') // 'application/json'
-mime.lookup('.md') // 'text/markdown'
-mime.lookup('file.html') // 'text/html'
-mime.lookup('folder/file.js') // 'application/javascript'
-mime.lookup('folder/.htaccess') // false
+lookup('json') // 'application/json'
+lookup('.md') // 'text/markdown'
+lookup('file.html') // 'text/html'
+lookup('folder/file.js') // 'application/javascript'
+lookup('folder/.htaccess') // false
 
-mime.lookup('cats') // false
+lookup('cats') // false
 ```
 
-### mime.contentType(type)
+### contentType(type)
 
 Create a full content-type header given a content-type or extension.
-When given an extension, `mime.lookup` is used to get the matching
+When given an extension, `lookup` is used to get the matching
 content-type, otherwise the given content-type is used. Then if the
-content-type does not already have a `charset` parameter, `mime.charset`
+content-type does not already have a `charset` parameter, `charset`
 is used to get the default charset and add to the returned content-type.
 
 ```js
-mime.contentType('markdown') // 'text/x-markdown; charset=utf-8'
-mime.contentType('file.json') // 'application/json; charset=utf-8'
-mime.contentType('text/html') // 'text/html; charset=utf-8'
-mime.contentType('text/html; charset=iso-8859-1') // 'text/html; charset=iso-8859-1'
+contentType('markdown') // 'text/x-markdown; charset=utf-8'
+contentType('file.json') // 'application/json; charset=utf-8'
+contentType('text/html') // 'text/html; charset=utf-8'
+contentType('text/html; charset=iso-8859-1') // 'text/html; charset=iso-8859-1'
 
 // from a full path
-mime.contentType(path.extname('/path/to/file.json')) // 'application/json; charset=utf-8'
+contentType(path.extname('/path/to/file.json')) // 'application/json; charset=utf-8'
 ```
 
-### mime.extension(type)
+### extension(type)
 
 Get the default extension for a content-type.
 
 ```js
-mime.extension('application/octet-stream') // 'bin'
+extension('application/octet-stream') // 'bin'
 ```
 
-### mime.charset(type)
+### charset(type)
 
 Lookup the implied default charset of a content-type.
 
 ```js
-mime.charset('text/markdown') // 'UTF-8'
+charset('text/markdown') // 'UTF-8'
 ```
 
-### var type = mime.types[extension]
+### var type = types[extension]
 
 A map of content-types by extension.
 
-### [extensions...] = mime.extensions[type]
+### [extensions...] = extensions[type]
 
 A map of extensions by content-type.
 
@@ -102,12 +106,12 @@ A map of extensions by content-type.
 
 [MIT](LICENSE)
 
-[ci-image]: https://badgen.net/github/checks/jshttp/mime-types/master?label=ci
-[ci-url]: https://github.com/jshttp/mime-types/actions?query=workflow%3Aci
-[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/mime-types/master
-[coveralls-url]: https://coveralls.io/r/jshttp/mime-types?branch=master
-[node-version-image]: https://badgen.net/npm/node/mime-types
+[ci-image]: https://badgen.net/github/checks/floms/mime-types/master?label=ci
+[ci-url]: https://github.com/jshttp/floms/actions?query=workflow%3Aci
+[coveralls-image]: https://badgen.net/coveralls/c/github/floms/mime-types/master
+[coveralls-url]: https://coveralls.io/r/floms/mime-types?branch=master
+[node-version-image]: https://badgen.net/npm/node/@onefloms/mime-types
 [node-version-url]: https://nodejs.org/en/download
-[npm-downloads-image]: https://badgen.net/npm/dm/mime-types
-[npm-url]: https://npmjs.org/package/mime-types
-[npm-version-image]: https://badgen.net/npm/v/mime-types
+[npm-downloads-image]: https://badgen.net/npm/dm/@onefloms/mime-types
+[npm-url]: https://npmjs.org/package/@onefloms/mime-types
+[npm-version-image]: https://badgen.net/npm/v/@onefloms/mime-types
