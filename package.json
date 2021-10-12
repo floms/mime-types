@@ -2,17 +2,18 @@
   "name": "@onefloms/mime-types",
   "description": "The ultimate javascript content-type utility.",
   "version": "1.0.1",
-  "author": {
-    "name": "Yoel Nunez",
-    "email": "dev@floms.com",
-    "url": "https://www.floms.com/"
-  },
+  "contributors": [
+    "Yoel Nunez <dev@floms.com> (https://www.floms.com/)",
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jeremiah Senkpiel <fishrock123@rocketmail.com> (https://searchbeam.jit.su)",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
+  ],
   "license": "MIT",
   "keywords": [
     "mime",
     "types"
   ],
-  "repository": "jshttp/mime-types",
+  "repository": "floms/mime-types",
   "dependencies": {
     "mime-db": "1.50.0"
   },

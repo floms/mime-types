@@ -107,7 +107,7 @@ A map of extensions by content-type.
 [MIT](LICENSE)
 
 [ci-image]: https://badgen.net/github/checks/floms/mime-types/master?label=ci
-[ci-url]: https://github.com/jshttp/floms/actions?query=workflow%3Aci
+[ci-url]: https://github.com/floms/mime-types/actions?query=workflow%3Aci
 [coveralls-image]: https://badgen.net/coveralls/c/github/floms/mime-types/master
 [coveralls-url]: https://coveralls.io/r/floms/mime-types?branch=master
 [node-version-image]: https://badgen.net/npm/node/@onefloms/mime-types
